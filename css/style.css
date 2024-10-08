@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'LPMQ Isep Misbah';
+    src: url('../assets/LPMQ Isep Misbah.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background: #111;
+}
+
+/*-- Header --*/
+.header {
+    width: 100%;
+    padding: 100px 40px 40px;
+    color: #fff;
+    background-color: #4d4d4d;
+    background-image: url('../assets/md-mahdi-QcSidY7HHw4-unsplash.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.header::before {
+    content: '';
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* NavBar */
+.header .nav {
+    width: 100%;
+    height: 60px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-out;
+}
+
+.header .nav.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    position: fixed;
+}
+
+.header .nav .logo {
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.header .nav .search-button {
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+
+.header .nav.active .search-button {
+    display: block;
+}
+
+/* Header Content */
+.header .title {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.4;
+    position: relative;
+}
+
+.header .subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.8;
+    opacity: 0.6;
+    margin-top: 20px;
+}
+
+.header .search-box {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header .search-box img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+.header .search-box p {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    margin-left: 10px;
+}
+
+/*-- Content --*/
+.content {
+    width: 100%;
+    padding: 40px;
+}
+
+/* Sort */
+.content .control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.content .control .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+}
+
+.content .control .sort {
+    padding: 5px 10px;
+    background-color: #1e1e1e;
+    border: 2px solid #3c3c3c;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.content .control .sort .sort-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.6;
+}
+
+.content .control .sort img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+/* Card */
+.card-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-wrapper .card {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    background-color: #1e1e1e;
+    border: 2px solid #3c3c3c;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.card-wrapper .card .no-surah {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding-top: 2px;
+    position: relative;
+    background-image: url('../assets/rosette.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-wrapper .card .meta {
+    width: 100%;
+    margin-left: 15px;
+}
+
+.card-wrapper .card .meta .surah {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-wrapper .card .meta .translation,
+.card-wrapper .card .meta .detail {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.4;
+}
+
+/* Error Text */
+.card-wrapper .error-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #3c3c3c;
+}
+
+/*-- Footer --*/
+.footer {
+    width: 100%;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .copyright {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/*-- Search --*/
+.search-container {
+    width: 100%;
+    height: 100%;
+    padding: 80px 20px 0;
+    background-color: #111;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.2s ease-out;
+    overflow-y: scroll;
+}
+
+.search-container.active {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.search-container .search-wrapper {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #111;
+    border-bottom: 2px solid #1e1e1e;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.search-container .search-wrapper .search-box {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-container .search-wrapper .search-box img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+.search-container .search-wrapper .search-box input {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    width: 100%;
+    margin-left: 10px;
+    background: none;
+    border-width: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-container .search-wrapper .close-search {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+/*-- Preloader --*/
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader .loading {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 150px 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.preloader .loading::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    animation: loading 1s linear infinite forwards;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

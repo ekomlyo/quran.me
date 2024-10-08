@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quran.me</title>
+    <!-- CSS Link(s) -->
+    <link rel="stylesheet" href="./css/reader.css">
+    <link rel="stylesheet" href="./css/slider.css">
+</head>
+
+<body>
+    <div class="card-wrapper"></div>
+
+    <div class="musicPlayer hidden">
+        <audio id="myAudio">
+            <source src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="controller-wrapper">
+            <div class="controller">
+                <img id="closeButton" src="../assets/x.svg" alt="closeButton" />
+                <div class="meta-wrapper">
+                    <div class="meta">
+                        <p class="title">Ayat #<span class="txtTitle">1</span></p>
+                        <p class="time"><span class="txtProgress">00.00</span> / <span class="txtDuration">00.00</span></p>
+                    </div>
+                    <img id="prevButton" src="../assets/player-skip-back-filled.svg" alt="prevButton" />
+                    <img id="playButton" src="../assets/player-play-filled.svg" alt="playButton" />
+                    <img id="nextButton" src="../assets/player-skip-forward-filled.svg" alt="nextButton" />
+                </div>
+            </div>
+            <input id="musicSlider" type="range" min="0" max="100" value="0">
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="js/reader.js"></script>
+</body>
+
+</html>
